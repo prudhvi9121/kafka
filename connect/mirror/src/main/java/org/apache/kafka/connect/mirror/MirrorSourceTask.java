@@ -67,8 +67,8 @@ public class MirrorSourceTask extends SourceTask {
 
     // for testing
     MirrorSourceTask(KafkaConsumer<byte[], byte[]> consumer, MirrorSourceMetrics metrics, String sourceClusterAlias,
-            ReplicationPolicy replicationPolicy,
-            OffsetSyncWriter offsetSyncWriter) {
+        ReplicationPolicy replicationPolicy,
+        OffsetSyncWriter offsetSyncWriter) {
         this.consumer = consumer;
         this.metrics = metrics;
         this.sourceClusterAlias = sourceClusterAlias;
@@ -99,7 +99,7 @@ public class MirrorSourceTask extends SourceTask {
         initializeConsumer(taskTopicPartitions);
 
         log.info("{} replicating {} topic-partitions {}->{}: {}.", Thread.currentThread().getName(),
-                taskTopicPartitions.size(), sourceClusterAlias, config.targetClusterAlias(), taskTopicPartitions);
+            taskTopicPartitions.size(), sourceClusterAlias, config.targetClusterAlias(), taskTopicPartitions);
     }
 
     @Override
