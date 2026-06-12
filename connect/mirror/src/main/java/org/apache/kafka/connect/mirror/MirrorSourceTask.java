@@ -130,7 +130,7 @@ public class MirrorSourceTask extends SourceTask {
         Utils.closeQuietly(metrics, "metrics");
         log.info("Stopping {} took {} ms.", Thread.currentThread().getName(), System.currentTimeMillis() - start);
     }
-  
+ 
     @Override
     public String version() {
         return new MirrorSourceConnector().version();
