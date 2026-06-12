@@ -249,9 +249,9 @@ public class MirrorSourceTask extends SourceTask {
 
                 SourceRecord converted = convertRecord(record);
                 sourceRecords.add(converted);
-                TopicPartition targetTopicPartition = new TopicPartition(converted.topic(), converted.kafkaPartition());
-                metrics.recordAge(targetTopicPartition, System.currentTimeMillis() - record.timestamp());
-                metrics.recordBytes(targetTopicPartition, byteSize(record.value()));
+                TopicPartition topicPartition = new TopicPartition(converted.topic(), converted.kafkaPartition());
+                metrics.recordAge(topicPartition, System.currentTimeMillis() - record.timestamp());
+                metrics.recordBytes(topicPartition, byteSize(record.value()));
             }
             if (sourceRecords.isEmpty()) {
                 // WorkerSourceTasks expects non-zero batch size
